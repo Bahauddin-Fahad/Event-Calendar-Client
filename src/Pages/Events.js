@@ -1,24 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
-
 import Event from "./Event";
 
 const Events = () => {
-  const { monthName, dayId } = useParams();
-  const events = useFetch(`${monthName}/${dayId}`);
+  const { date } = useParams();
+  const events = useFetch(`day/${date}`);
   const eventNames = Object.keys(events);
-  const eventValues = Object.values(events);
   return (
-    <div className="pb-10">
-      <h1 className="py-4 font-bold text-3xl text-gray-200 uppercase">
-        {eventValues[0]}
-      </h1>
-      <div className="mx-10">
-        {eventNames.map((eventName, index) => (
-          <Event key={index} eventName={eventName} events={events} />
-        ))}
-      </div>
+    <div>
+      <h1 className="font-bold text-3xl text-white pb-2">{date} </h1>
+      {eventNames.map((eventName) => (
+        <Event eventName={eventName} events={events} />
+      ))}
     </div>
   );
 };

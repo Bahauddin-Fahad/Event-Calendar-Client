@@ -2,7 +2,6 @@ import React from "react";
 
 const Event = ({ eventName, events }) => {
   const eventValue = events[eventName];
-
   return (
     <div className="mx-auto bg-gray-300 p-3 m-2 rounded-xl flex flex-wrap items-center gap-x-3">
       <h1 className="font-bold uppercase text-left text-lg">{eventName}:</h1>
@@ -32,7 +31,6 @@ const Event = ({ eventName, events }) => {
                           {singleValue[key]} :
                         </h1>
                       ) : (
-                        // <>{console.log(Object.keys(singleValue).length)}</>
                         <div className="grid grid-cols-3 gap-x-3 gap-y-1">
                           {singleValue[key].map((value) =>
                             value === "NA" ? (

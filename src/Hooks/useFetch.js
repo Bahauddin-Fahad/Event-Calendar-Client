@@ -4,7 +4,7 @@ const useFetch = (param) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://event-calender-server.herokuapp.com/${param}`)
+      .get(`${process.env.REACT_APP_SERVER_URL}/${param}`)
       .then((data) => setData(data.data));
   }, [param]);
 

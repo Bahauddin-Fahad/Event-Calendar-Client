@@ -7,10 +7,10 @@ const Month = ({ month }) => {
   return (
     <div className="mx-auto bg-gray-300 p-3 rounded-xl w-full max-w-lg">
       <button
-        onClick={() => navigate(`/month/${month.name}`)}
-        className="btn w-full max-w-sm text-lg"
+        onClick={() => navigate(`/${month?.name}`)}
+        className="btn w-full max-w-sm"
       >
-        {month?.name}
+        {month.name}
       </button>
     </div>
   );
