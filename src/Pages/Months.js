@@ -4,7 +4,6 @@ import useFetch from "../Hooks/useFetch";
 import Month from "./Month";
 
 const Months = () => {
-  // also can use env variable for the url
   const months = useFetch("months");
   console.log(months);
 
