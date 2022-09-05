@@ -8,7 +8,7 @@ const Days = () => {
   const days = month.dates;
 
   return (
-    <div className="h-screen flex justify-center items-center flex-col px-8">
+    <div className="min-h-screen flex justify-center items-center flex-col glass bg-gray-600 hover:bg-gray-600 px-8 ">
       <h1 className="text-3xl font-bold text-white uppercase pb-4">
         {month?.name}
       </h1>
