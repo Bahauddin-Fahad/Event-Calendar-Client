@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Event = ({ eventName, events }) => {
   const eventValues = events[eventName];
@@ -11,18 +11,22 @@ const Event = ({ eventName, events }) => {
         </>
       ) : (
         <>
-          {eventValues.map((eventValue) => {
+          {eventValues?.map((eventValue, index) => {
             return typeof eventValue === "string" ? (
               eventValue === "NA" ? (
-                <h1 className="text-sm font-semibold text-red-600">N/A</h1>
+                <h1 key={index} className="text-sm font-semibold text-red-600">
+                  N/A
+                </h1>
               ) : (
-                <h1 className="font-semibold">{eventValue}</h1>
+                <h1 key={index} className="font-semibold">
+                  {eventValue}
+                </h1>
               )
             ) : (
-              <>
-                {Object.keys(eventValue).map((key) => {
+              <Fragment key={index}>
+                {Object.keys(eventValue).map((key, index) => {
                   return (
-                    <>
+                    <Fragment key={index}>
                       {key !== "upto" && key !== "values" && (
                         <h1 className="font-bold">{key} :</h1>
                       )}
@@ -36,17 +40,20 @@ const Event = ({ eventName, events }) => {
                         </h1>
                       ) : (
                         <div className="flex flex-wrap gap-x-4 gap-y-1">
-                          {eventValue[key].map((singleValue) => (
-                            <h1 className="font-semibold text-sm text-left">
+                          {eventValue[key].map((singleValue, index) => (
+                            <h1
+                              key={index}
+                              className="font-semibold text-sm text-left"
+                            >
                               {singleValue}
                             </h1>
                           ))}
                         </div>
                       )}
-                    </>
+                    </Fragment>
                   );
                 })}
-              </>
+              </Fragment>
             );
           })}
         </>

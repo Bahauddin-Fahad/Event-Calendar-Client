@@ -8,12 +8,13 @@ const useFetch = (param) => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/${param}`)
+      // .get(`${process.env.REACT_APP_SERVER_URL}/${param}`)
+      .get(`http://localhost:5000/${param}`)
       .then((data) => {
         setData(data.data);
       })
       .catch((err) => {
-        navigate("/notFound");
+        // navigate("/notFound");
         toast.error("Failed to Load Data", { theme: "colored" });
       });
   }, [param, navigate]);

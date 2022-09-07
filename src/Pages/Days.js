@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import Day from "./Day";
 import useFetch from "../Hooks/useFetch";
 const Days = () => {
-  const { monthName } = useParams();
-  const month = useFetch(monthName);
+  const { monthName, year } = useParams();
+  const month = useFetch(`${year}/${monthName}`);
   const days = month.dates;
 
   return (
