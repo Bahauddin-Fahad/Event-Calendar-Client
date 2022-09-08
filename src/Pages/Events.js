@@ -18,7 +18,7 @@ const Events = () => {
 
   return (
     <div className="min-h-screen pb-8 glass bg-gray-700 hover:bg-gray-700 space-y-3">
-      <div className="flex gap-3 justify-around items-center pt-10">
+      <div className="flex flex-col md:flex-row lg:flex-row gap-2 justify-around items-center pt-10 px-3">
         <h1 className="font-bold text-3xl text-white ">{date} </h1>
         <select onChange={languageSelect} className="select w-full max-w-xs">
           {languages?.map((language, index) => (

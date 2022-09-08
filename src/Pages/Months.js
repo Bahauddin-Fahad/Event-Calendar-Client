@@ -8,10 +8,9 @@ const Months = () => {
   const { year } = useParams();
   const months = useFetch(`${year}/months`);
   console.log(months);
-  // months.sort((a, b) => a._id - b._id);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center glass bg-gray-600 hover:bg-gray-600">
+    <div className="min-h-screen flex flex-col justify-center items-center glass bg-gray-600 hover:bg-gray-600 pb-16 sm:pb-0 md:pb-0 lg:pb-0">
       <h2 className="text-center text-3xl font-bold mb-6 text-white">
         Event Calender {year}
       </h2>
