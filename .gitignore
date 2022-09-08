@@ -5,12 +5,14 @@
 /.pnp
 .pnp.js
 
+json/
 
 # testing
 /coverage
 
 # production
 /build
+/json
 
 # misc\
 .env

@@ -11,6 +11,7 @@ const useFetch = (param) => {
       // .get(`${process.env.REACT_APP_SERVER_URL}/${param}`)
       .get(`http://localhost:5000/${param}`)
       .then((data) => {
+        // data.data.sort((a, b) => a._id - b._id);
         setData(data.data);
       })
       .catch((err) => {

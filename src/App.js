@@ -9,7 +9,7 @@ import Days from "./Pages/Days";
 import Events from "./Pages/Events";
 import NotFound from "./Pages/NotFound";
 import Years from "./Pages/Years";
-// import Json from "./Pages/Json";
+import Json from "./Pages/Json";
 
 AOS.init();
 
@@ -22,7 +22,7 @@ function App() {
         <Route path="/:year/:monthName" element={<Days />} />
         <Route path="/day/:date" element={<Events />} />
         <Route path="/notFound" element={<NotFound />} />
-        {/* <Route path="/json" element={<Json />} /> */}
+        <Route path="/json" element={<Json />} />
       </Routes>
       <ToastContainer />
     </div>

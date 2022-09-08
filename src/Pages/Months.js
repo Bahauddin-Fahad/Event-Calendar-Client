@@ -7,6 +7,8 @@ import Month from "./Month";
 const Months = () => {
   const { year } = useParams();
   const months = useFetch(`${year}/months`);
+  console.log(months);
+  // months.sort((a, b) => a._id - b._id);
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center glass bg-gray-600 hover:bg-gray-600">
