@@ -25,9 +25,16 @@ const Years = () => {
       <div>
         <select onChange={getYear} className="select w-full max-w-sm">
           <option>Select The Year</option>
-          {years?.map((year, index) => (
-            <option key={index}>{year.year}</option>
-          ))}
+          {years
+            ?.sort((a, b) => a.year - b.year)
+            //  if (a.year > b.year) {
+            //     return 1;
+            //   } else {
+            //     return -1;
+            //   }
+            .map((year, index) => (
+              <option key={index}>{year.year}</option>
+            ))}
         </select>
       </div>
       <button
