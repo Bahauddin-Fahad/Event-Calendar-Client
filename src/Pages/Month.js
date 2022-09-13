@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Month = ({ month, year }) => {
-  console.log(month);
   const navigate = useNavigate();
 
   return (
@@ -12,10 +11,10 @@ const Month = ({ month, year }) => {
       className="mx-auto hover:bg-gray-700 bg-gray-400 p-2 rounded-xl w-full max-w-lg"
     >
       <button
-        onClick={() => navigate(`/${year}/${month}`)}
+        onClick={() => navigate(`/${year}/${month.name}`)}
         className="btn hover:bg-gray-300 hover:text-black w-full max-w-sm"
       >
-        {month}
+        {month.name}
       </button>
     </div>
   );

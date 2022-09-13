@@ -23,17 +23,14 @@ const Years = () => {
         Welcome to Event Calender
       </h2>
       <div>
-        <select onChange={getYear} className="select w-full max-w-sm">
-          <option>Select The Year</option>
+        <select onChange={getYear} className="select w-80 font-bold">
+          <option className="font-bold">Select The Year</option>
           {years
             ?.sort((a, b) => a.year - b.year)
-            //  if (a.year > b.year) {
-            //     return 1;
-            //   } else {
-            //     return -1;
-            //   }
             .map((year, index) => (
-              <option key={index}>{year.year}</option>
+              <option className=" font-bold" key={index}>
+                {year.year}
+              </option>
             ))}
         </select>
       </div>
